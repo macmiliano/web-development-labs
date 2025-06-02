@@ -1,0 +1,14 @@
+# Vendor directory (if using Composer)
+/vendor/
+
+# Configuration files with sensitive information
+config.php
+credentials.json
+client_secret.json
+
+# Environment files
+.env
+.env.local
+
+# Logs
+*.log

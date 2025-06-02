@@ -1,0 +1,25 @@
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# PHP specific
+vendor/
+composer.lock
+
+# Logs and temporary files
+*.log
+*.tmp
+*.cache
+
+# Configuration files with sensitive information
+config.php
