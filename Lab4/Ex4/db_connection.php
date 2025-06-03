@@ -2,8 +2,8 @@
 class DatabaseConnection {
     private $host = 'localhost';
     private $username = 'root';
-    private $password = 'Miliano';
-    private $database = 'LibraryfourDB';
+    private $password = 'fill password';
+    private $database = 'fill database name';
     private $connection;
 
     public function __construct() {
