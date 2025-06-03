@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
 $user = "root";
-$password = "Miliano"; // Default in XAMPP
-$dbname = "StudentDB";
+$password = "Fillpassword"; // Default in XAMPP
+$dbname = "Fill db name";
 
 $conn = new mysqli($host, $user, $password, $dbname);
 
