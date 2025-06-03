@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
 $user = "root";
-$password = "Miliano"; // Default in XAMPP
-$dbname = "LibrarySystemDB";
+$password = "YOUR_DATABASE_PASSWORD"; 
+$dbname = "YOUR_DATABASE_NAME";
 
 $conn = new mysqli($host, $user, $password, $dbname);
 
