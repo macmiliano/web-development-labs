@@ -87,16 +87,26 @@ This repository contains my completed lab assignments for the Web Development co
 
 ### Exercise 2: Google OAuth Implementation
 
-- **`config.example.php`**:
-  - Template for the actual config.php file
-  - Contains placeholders for Google OAuth credentials
-  - Includes database connection parameters
-  - Shows Google API client initialization code
+- **`env_loader.php`**:
+  - Utility file that loads environment variables from .env file
+  - Makes sensitive configuration available to the application
+  - Provides a secure way to manage credentials across environments
+
+- **`.env.example`** (template for actual .env file):
+  - Contains placeholders for sensitive configuration
+  - Shows the required environment variables
+  - Serves as a guide for setting up the actual .env file
+
+- **`config.example.php`** (template for actual config.php):
+  - Shows how to load and use environment variables
+  - Demonstrates database connection setup
+  - Includes Google OAuth client initialization
+  - Configures session security settings
 
 - **`config.php`** (excluded from repository via .gitignore):
-  - Contains actual Google OAuth credentials
-  - Includes database connection parameters
-  - Initializes the Google API client with proper settings
+  - Contains actual configuration using environment variables
+  - Initializes database connections and OAuth clients
+  - Sets up security parameters for the application
 
 - **`google_login.php`**:
   - Displays login options including Google OAuth
@@ -155,10 +165,37 @@ This repository contains my completed lab assignments for the Web Development co
 - CSRF protection on all forms that change state
 
 ### Configuration Security
-- Sensitive configuration files excluded via .gitignore
+- Environment variables for sensitive configuration (.env file)
+- Separation of code from configuration
 - Example configuration templates provided without credentials
-- Database credentials kept separate from application code
 - Proper file permissions recommended in setup instructions
+
+## Environment Configuration
+
+This project uses environment variables to manage sensitive configuration. This approach:
+
+1. Keeps sensitive data out of version control
+2. Allows different configurations for development, testing, and production
+3. Follows security best practices for credential management
+
+### Files for Environment Configuration:
+
+- **`.env`**: Contains actual credentials and configuration values (not committed to Git)
+- **`.env.example`**: Template showing required variables (safe to commit to Git)
+- **`env_loader.php`**: Utility to load variables from .env file (safe to commit to Git)
+- **`config.php`**: Uses environment variables for application setup (not committed to Git)
+- **`config.example.php`**: Template showing how to use environment variables (safe to commit to Git)
+
+### Files in Version Control (GitHub):
+- All application code files
+- Template files (*.example.php, .env.example)
+- Utility files (env_loader.php)
+- Documentation files (README.md)
+
+### Files NOT in Version Control:
+- Files with actual credentials (.env, config.php)
+- User-specific files and directories
+- Temporary files and logs
 
 ## Setup Instructions
 
@@ -166,14 +203,14 @@ This repository contains my completed lab assignments for the Web Development co
 2. Configure your web server (Apache/Nginx) to serve the files
 3. Create necessary database tables using the provided SQL schemas
 4. Copy example configuration files and update with your credentials:
-   - For Lab4: Copy db_credentials.example.php to db_credentials.php
-   - For Lab5and6: Copy config.example.php to config.php
+   - Copy `.env.example` to `.env` and update with your actual credentials
+   - Copy `config.example.php` to `config.php`
 5. For Google OAuth setup:
    - Create a project in Google Cloud Console
    - Configure OAuth consent screen
    - Create OAuth client ID credentials
    - Add authorized redirect URIs
-   - Update config.php with your client ID and secret
+   - Update `.env` with your client ID and secret
 
 ## Technologies Used
 
@@ -187,3 +224,4 @@ This repository contains my completed lab assignments for the Web Development co
 ## Contact
 
 For any questions regarding this repository, please contact me at [your-email@example.com]
+
